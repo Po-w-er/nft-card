@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --SoftBlue:#eeb5b5;
+    --Cyan: hsl(178, 100%, 50%);
+    --pink: rgba(235, 138, 155, 0.667);
+    --primary:#c44569;
+    --secondary:#cf6a87;
+    --gray:  hsl(215, 51%, 70%);
+    --line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+    --font: 'Outfit', sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    font-family: var(--font);
+}
+
+
+main{
+    article{
+        background-color: var(--secondary);
+        width: 360px;
+        height: 100%;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+        .nft-image{
+            position: relative;
+            img{
+               width: 100%;
+               object-fit: cover;
+               border-radius: 8px;
+            }
+            .overlay{
+                cursor: pointer;
+                border-radius: 8px;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 192, 203, 0.696);
+                width: 100%;
+                height: 175.8px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                img{
+                    width: 100px;
+                }
+            }
+            .remove{
+                visibility: hidden;
+                height: 0;
+            }
+        }
+        
+        &:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+        }
+        .header{
+            display: flex;
+            gap: 0.7rem;
+            flex-direction:column;
+            padding:1rem 0rem;
+            .header-name{
+                h1{
+                    color: var(--White);
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    &:hover{
+                        color: var(--Cyan);
+                    }
+                }
+            }
+            .description{
+                color: var(--SoftBlue);
+                font-size: 1.2rem;
+            }
+            .pricing{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .eth{
+                    display: flex;
+                    column-gap:5px;
+                    align-items: center;
+                    justify-content: left;
+                    h2{
+                        font-size: 1.2rem;
+                        color: var(--Cyan);
+                    }
+                }
+                .time{
+                    display: flex;
+                    column-gap:5px;
+                    align-items: center;
+                    justify-content: left;
+                    p{
+                        font-size: 1.2rem;
+                        color: var(--gray);
+                    }
+                }
+            }
+        }
+        .profile{
+            border-top: 1px solid var(--line);
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            column-gap: 10px;
+            text-transform: capitalize;
+            .profile-img{
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border: 2.5px solid var(--White);
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+            .profile-desc{
+                p{
+                    font-size: 1.1rem;
+                    color: var(--SoftBlue);
+                    word-spacing: 1px;
+                   
+                    .name{
+                        color: var(--White);
+                        font-weight: 600;
+                        cursor: pointer;
+                        &:hover{
+                            color: var(--Cyan);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 400px){
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        article{
+          
+            max-width: 90%;
+            .nft-image{
+                .overlay{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 366px){
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        article{
+          
+            max-width: 85%;
+            .nft-image{
+                .overlay{
+                    height: 98%;
+                }
+            }
+        }
+    }
+}
